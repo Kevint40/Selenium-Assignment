@@ -1,0 +1,34 @@
+package org.example;
+
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.v134.page.model.FileHandler;
+
+import java.io.File;
+import java.lang.foreign.MemorySegment;
+import java.util.concurrent.TimeUnit;
+
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class basic_selenium_test {
+    public static void main(String[] args) {
+        System.setProperty(
+                "webdriver.chrome.driver",
+                "C:/DriveB/Module7/required files/chromedriver.exe");
+        // Instantiate a ChromeDriver class.
+        WebDriver driver = new ChromeDriver();
+
+        // Maximize the browser
+        driver.manage().window().maximize();
+
+        // Launch Website
+        driver.get("https://www.wikipedia.org/");
+        driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+       driver.quit();
+}
+    }
